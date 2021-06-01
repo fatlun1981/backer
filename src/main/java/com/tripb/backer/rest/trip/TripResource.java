@@ -1,4 +1,4 @@
-package com.tripb.backer.rest.json;
+package com.tripb.backer.rest.trip;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;

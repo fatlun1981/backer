@@ -1,4 +1,4 @@
-package com.tripb.backer.rest.json;
+package com.tripb.backer.rest.trip;
 
 import java.math.BigDecimal;
 import java.util.Date;
