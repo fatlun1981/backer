@@ -9,12 +9,12 @@ import lombok.Data;
 @RegisterForReflection
 @Data
 public class Trip {
-    String name;
-    String description;
-    String[] location;
-    Date plannedStart;
-    Date plannedEnd;
-    Date actualStart;
-    Date actualEnd;
-    BigDecimal duration;
+    public String name;
+    public String description;
+    // public String[] location;
+    public Date plannedStart;
+    public Date plannedEnd;
+    public Date actualStart;
+    public Date actualEnd;
+    public BigDecimal duration;
 }
