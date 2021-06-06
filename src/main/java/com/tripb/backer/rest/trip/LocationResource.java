@@ -16,30 +16,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/trips")
-public class TripResource {
+@Path("/location")
+public class LocationResource {
 
     @Inject
-    TripRepository tripRepository;
-
-    private Set<Trip> trips = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
-    
-    public TripResource(){
-        trips.add(new Trip());
-        trips.add(new Trip());
-    }
-    
-    // @GET
-    // @Produces(MediaType.TEXT_PLAIN)
-    // public String hello() {
-    //     return "Hello RESTEasy";
-    // }
+    LocationRepository locationRepository;
 
     @GET
     public Response listAll(){
-        List<Trip> result = null;
+        List<Location> result = null;
         try{
-            result = tripRepository.listAll();
+            result = locationRepository.listAll();
             return ok(result).build();
         }catch(Exception e){
             return status(500).build();
@@ -52,21 +39,21 @@ public class TripResource {
     // }
 
     @POST
-    public Trip add(Trip trip){
-        tripRepository.persist(trip);
-        return trip;
+    public Location add(Location location){
+        locationRepository.persist(location);
+        return location;
     }
 
     @DELETE
-    public Set<Trip> delete(Trip trip){
+    public Set<Location> delete(Location location){
         // trips.removeIf(filter)
-        return trips;
+        return location;
     }
 
     @DELETE
     @Path("deleteAll")
     public Response deleteAll(){
-        this.tripRepository.deleteAll();
+        this.locationRepository.deleteAll();
         return ok().build();
     }
 }
