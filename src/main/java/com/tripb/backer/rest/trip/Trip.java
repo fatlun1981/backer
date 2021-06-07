@@ -15,14 +15,14 @@ import lombok.Data;
 @RegisterForReflection
 @Data
 public class Trip extends Block{
-    @BsonId
-    public ObjectId id;
-    public String name;
-    public String description;
-    public Date plannedStart;
-    public Date plannedEnd;
-    public Date actualStart;
-    public Date actualEnd;
-    public BigDecimal duration;
-    public List<String> location;
+    // @BsonId
+    // public ObjectId id;
+    // public String name;
+    // public String description;
+    // public Date plannedStart;
+    // public Date plannedEnd;
+    // public Date actualStart;
+    // public Date actualEnd;
+    // public BigDecimal duration;
+    // public List<String> location;
 }

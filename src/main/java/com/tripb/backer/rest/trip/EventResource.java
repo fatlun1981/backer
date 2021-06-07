@@ -2,31 +2,25 @@ package com.tripb.backer.rest.trip;
 
 import static javax.ws.rs.core.Response.*;
 
-import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Set;
-
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/location")
-public class LocationResource {
+@Path("/event")
+public class EventResource {
 
     @Inject
-    LocationRepository locationRepository;
+    EventRepository repository;
 
     @GET
     public Response listAll(){
-        List<Location> result = null;
+        List<Event> result = null;
         try{
-            result = locationRepository.listAll();
+            result = repository.listAll();
             return ok(result).build();
         }catch(Exception e){
             return status(500).build();
@@ -39,21 +33,21 @@ public class LocationResource {
     // }
 
     @POST
-    public Location add(Location location){
-        locationRepository.persist(location);
-        return location;
+    public Event add(Event entity){
+        repository.persist(entity);
+        return entity;
     }
 
     @DELETE
-    public Location delete(Location location){
+    public Event delete(Event entity){
         // trips.removeIf(filter)
-        return location;
+        return entity;
     }
 
     @DELETE
     @Path("deleteAll")
     public Response deleteAll(){
-        this.locationRepository.deleteAll();
+        this.repository.deleteAll();
         return ok().build();
     }
 }
