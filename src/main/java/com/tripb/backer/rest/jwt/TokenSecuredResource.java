@@ -1,6 +1,7 @@
 package com.tripb.backer.rest.jwt;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -26,6 +27,14 @@ public class TokenSecuredResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@Context SecurityContext ctx) {
         return getResponseString(ctx);
+    }
+
+    @GET
+    @Path("roles-allowed") 
+    @RolesAllowed({ "User", "Admin" }) 
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloRolesAllowed(@Context SecurityContext ctx) {
+        return getResponseString(ctx) + ", birthdate: " + jwt.getClaim("birthdate").toString(); 
     }
 
     private String getResponseString(SecurityContext ctx) {
