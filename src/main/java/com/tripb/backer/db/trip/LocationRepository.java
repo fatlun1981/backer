@@ -1,4 +1,4 @@
-package com.tripb.backer.rest.trip;
+package com.tripb.backer.db.trip;
 
 import javax.enterprise.context.ApplicationScoped;
 

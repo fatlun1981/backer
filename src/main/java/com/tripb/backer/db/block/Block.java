@@ -1,19 +1,15 @@
-package com.tripb.backer.rest.block;
+package com.tripb.backer.db.block;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-
-import org.bson.codecs.pojo.annotations.BsonId;
-import org.bson.types.ObjectId;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Data;
 
 @RegisterForReflection
 @Data
-public class Block {
-    @BsonId
-    public ObjectId id;
+public class Block extends BaseEntity{
     public String name;
     public String description;
     public Date plannedStart;

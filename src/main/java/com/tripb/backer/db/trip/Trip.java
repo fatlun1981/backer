@@ -1,10 +1,10 @@
-package com.tripb.backer.rest.trip;
+package com.tripb.backer.db.trip;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import com.tripb.backer.rest.block.Block;
+import com.tripb.backer.db.block.Block;
 
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.types.ObjectId;

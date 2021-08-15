@@ -1,4 +1,4 @@
-package com.tripb.backer.rest.trip;
+package com.tripb.backer.db.block;
 
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.types.ObjectId;
@@ -8,10 +8,7 @@ import lombok.Data;
 
 @RegisterForReflection
 @Data
-public class Location {
+public class BaseEntity {
     @BsonId
     public ObjectId id;
-    public String name;
-    public String description;
-    public String address;
 }

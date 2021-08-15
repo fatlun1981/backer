@@ -1,10 +1,10 @@
-package com.tripb.backer.rest.trip;
+package com.tripb.backer.db.trip;
 
 import javax.enterprise.context.ApplicationScoped;
 
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
 
 @ApplicationScoped
-public class EventRepository implements PanacheMongoRepository<Event>{
+public class TripRepository implements PanacheMongoRepository<Trip>{
     
 }
